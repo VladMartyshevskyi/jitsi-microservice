@@ -8,11 +8,11 @@
     <version>2.3.2.RELEASE</version>
     <relativePath /> <!-- lookup parent from repository -->
   </parent>
-  <groupId>org.exoplatform</groupId>
+  <groupId>org.exoplatform.jitsi</groupId>
   <artifactId>jitsi</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>jitsi</name>
-  <description>Jitsi Microservice</description>
+  <description>eXo Jitsi Call service</description>
 
   <properties>
     <java.version>1.8</java.version>
