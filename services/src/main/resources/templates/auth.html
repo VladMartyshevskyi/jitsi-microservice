@@ -1,0 +1,44 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<div>Auth iframe</div>
+<script>
+
+/*
+ We can listen to storage changes. (can be useful while authorizing)
+ window.addEventListener('storage', function(e) {
+  console.log("Storage event: key: " + e.key + ". Value: " + e.newValue + " old value: " + e.oldValue);
+});
+*/
+ 
+
+window.addEventListener("message", function(event) {
+
+  /* Only these domains can postMessage
+  const domains = [
+    "http://office-dev01.exoplatform.org",
+    "http://192.168.1.103:8080"
+  ]
+  if (!domains.includes(event.origin))
+    return;
+  */
+ 
+  
+  const { action, key, value } = event.data
+  console.log("Message (" + action + ") handled from " + event.origin + ". Key:" + key + " Value:" + value);
+  //Save data to localstorage
+  if (action == 'save'){
+    window.localStorage.setItem(key, JSON.stringify(value))
+  }
+}, false);
+
+
+</script>
+</body>
+</html>
