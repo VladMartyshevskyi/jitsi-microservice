@@ -19,7 +19,6 @@
   <modules>
     <module>services</module>
     <module>webapp</module>
-    <module>packaging</module>
   </modules>
 
   <properties>
