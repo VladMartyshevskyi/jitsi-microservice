@@ -31,3 +31,27 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Npm
+node_modules/
+
+#bin folder
+bin/
+
+#log file
+*.log
+
+# eclipse project file
+.settings/
+
+# vsCode settings
+.vscode
+
+# OS
+.DS_Store
+
+# Misc
+*.swp
+transaction.log
+rebel-remote.xml
+rebel.xml
