@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <Auth msg="Welcome to Your Vue.js Jitsi App"/>
+    <Call msg="Welcome to Your Vue.js Jitsi App"/>
   </div>
 </template>
 
 <script>
-import Auth from "./components/Auth.vue";
+import Call from "./components/Call.vue";
 
 export default {
   name : "App",
   components : {
-    Auth
+    Call
   }
 };
 </script>

@@ -7,7 +7,7 @@ const app = "jitsi";
 
 const config = merge(webpackCommonConfig, {
   output: {
-    path: path.resolve(__dirname, `./target/${app}/`)
+    path: path.resolve(__dirname, `../../../target/frontend/public/${app}/`)
   }
 });
 

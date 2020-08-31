@@ -10,7 +10,7 @@ const exoServerPath = "/exo-server";
 
 let config = merge(webpackCommonConfig, {
   output: {
-    path: path.resolve(`${exoServerPath}/webapps/${app}/`)
+    path: path.resolve(`../../../target/${exoServerPath}/webapps/${app}/`)
   },
   devtool: "inline-source-map"
 });

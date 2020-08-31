@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>2.3.2.RELEASE</version>
-    <relativePath /> <!-- lookup parent from repository -->
+    <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>org.exoplatform</groupId>
   <artifactId>jitsi</artifactId>
@@ -67,13 +67,13 @@
       <plugin>
         <groupId>com.github.eirslett</groupId>
         <artifactId>frontend-maven-plugin</artifactId>
+        <version>${com.github.eirslett.frontend.version}</version>
         <executions>
           <execution>
             <id>install node and npm</id>
             <goals>
               <goal>install-node-and-npm</goal>
             </goals>
-            <phase>compile</phase>
             <configuration>
               <nodeVersion>${node.version}</nodeVersion>
               <npmVersion>${npm.version}</npmVersion>
@@ -84,7 +84,6 @@
             <goals>
               <goal>npm</goal>
             </goals>
-            <phase>compile</phase>
             <configuration>
               <arguments>install</arguments>
             </configuration>
@@ -94,7 +93,7 @@
             <goals>
               <goal>npm</goal>
             </goals>
-            <phase>compile</phase>
+            <phase>generate-resources</phase>
             <configuration>
               <arguments>run build</arguments>
             </configuration>
@@ -107,7 +106,4 @@
       </plugin>
     </plugins>
   </build>
-
-
-
 </project>
