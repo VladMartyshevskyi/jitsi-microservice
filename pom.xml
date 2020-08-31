@@ -47,17 +47,26 @@
   </dependencies>
 
   <build>
+    <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+    <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
+    <resources>
+      <resource>
+        <directory>${project.build.directory}/frontend</directory>
+      </resource>
+    </resources>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <folders>
+            <folder>${project.build.directory}/frontend</folder>
+          </folders>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>com.github.eirslett</groupId>
         <artifactId>frontend-maven-plugin</artifactId>
-        <configuration>
-          <installDirectory>target</installDirectory>
-        </configuration>
         <executions>
           <execution>
             <id>install node and npm</id>
@@ -91,12 +100,10 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
-        <!-- Maven Plugin for JS and CSS bundling and Unit Test execution -->
-        <groupId>com.github.eirslett</groupId>
-        <artifactId>frontend-maven-plugin</artifactId>
-        <version>${com.github.eirslett.frontend.version}</version>
+        <configuration>
+          <workingDirectory>${project.basedir}/src/main/frontend</workingDirectory>
+          <installDirectory>${project.build.directory}/node</installDirectory>
+        </configuration>
       </plugin>
     </plugins>
   </build>

@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <Auth msg="Welcome to Your Vue.js App"/>
+    <Auth msg="Welcome to Your Vue.js Jitsi App"/>
   </div>
 </template>
 
 <script>
-  import Auth from './components/Auth.vue'
-  export default {
-    name: 'App',
-    components: {
-      Auth
-    }
+import Auth from "./components/Auth.vue";
+
+export default {
+  name : "App",
+  components : {
+    Auth
   }
+};
 </script>
 
 <style>

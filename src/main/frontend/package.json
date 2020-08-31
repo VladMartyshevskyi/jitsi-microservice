@@ -7,12 +7,10 @@
     "url": "https://github.com/exo-addons/cloud-drive-extension"
   },
   "scripts": {
-    "start": "jest && webpack --config webpack.dev.js --mode development",
-    "dev": "jest && webpack-dev-server --config webpack.dev.js --mode development --hot",
-    "watch": "jest && webpack --config webpack.dev.js --progress --colors --watch -d",
-    "lint": "eslint --fix ./src/main/webapp/vue-app/components/*.vue",
-    "test": "jest",
-    "test-coverage": "jest --coverage",
+    "start": "webpack --config webpack.dev.js --mode development",
+    "dev": "webpack-dev-server --config webpack.dev.js --mode development --hot",
+    "watch": "webpack --config webpack.dev.js --progress --colors --watch -d",
+    "lint": "eslint --fix",
     "build": "webpack --config webpack.prod.js --mode production"
   },
   "author": "eXo",
@@ -55,46 +53,5 @@
   "dependencies": {
     "anchorme": "^1.1.2",
     "autosize": "^4.0.2"
-  },
-  "jest": {
-    "projects": [
-      {
-        "displayName": "test",
-        "testMatch": [
-          "<rootDir>/src/test/specs/**/*.js"
-        ],
-        "moduleNameMapper": {
-          "^vue$": "vue/dist/vue.common.js"
-        },
-        "moduleFileExtensions": [
-          "js",
-          "vue"
-        ],
-        "modulePaths": [
-          "node_modules",
-          "src"
-        ],
-        "transform": {
-          "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
-          ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
-        },
-        "roots": [
-          "src"
-        ],
-        "setupFiles": [
-          "<rootDir>/src/test/globals.js",
-          "jest-localstorage-mock",
-          "jest-fetch-mock"
-        ]
-      },
-      {
-        "displayName": "lint",
-        "runner": "jest-runner-eslint",
-        "testMatch": [
-          "<rootDir>/src/test/**/*.js"
-        ]
-      }
-    ],
-    "coverageDirectory": "<rootDir>/target/jest/coverage"
   }
 }
