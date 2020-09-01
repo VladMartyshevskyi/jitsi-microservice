@@ -52,6 +52,10 @@
     <resources>
       <resource>
         <directory>${project.build.directory}/frontend</directory>
+        <filtering>true</filtering>
+      </resource>
+      <resource>
+        <directory>${project.basedir}/src/main/resources</directory>
       </resource>
     </resources>
     <plugins>
